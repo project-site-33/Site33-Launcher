@@ -1,0 +1,43 @@
+{
+    "name": "site-33-launcher",
+    "preductname": "Site-33 Launcher",
+    "version": "1.0.38",
+    "description": "Launcher du serveur Minecraft Site-33",
+    "main": "src/main.js",
+    "author": "iGorTha, TheTimeDev_",
+    "url": "https://launcheur.site-33.net",
+    "engines": {
+        "node": "16.x.x"
+    },
+    "scripts": {
+        "start": "cross-env-shell NODE_ENV=dev electron .",
+        "build": "node build.js",
+        "dev": "nodemon --exec npm start"
+    },
+    "license": "CC0",
+    "nodemonConfig": {
+        "ext": "js,html,css"
+    },
+    "dependencies": {
+        "adm-zip": "^0.5.9",
+        "axios": "^1.1.3",
+        "discord-rpc": "^4.0.1",
+        "electron-updater": "^5.0.1",
+        "form-data": "^4.0.0",
+        "https": "^1.0.0",
+        "node-fetch": "^2.6.7",
+        "prompt": "^1.3.0",
+        "uuid": "^9.0.0",
+        "xml-js": "^1.6.11"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "electron": "^20.0.0",
+        "electron-builder": "^23.0.3",
+        "nodemon": "^2.0.16"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/project-site-33/Site33-Launcher.git"
+    }
+}

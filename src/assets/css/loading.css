@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+
+
+
+.splash {
+    position: absolute;
+    top: 180px;
+    left: 130px;
+    width: 145px;
+    height: 140px;
+    opacity: 0;
+    transition: opacity .3s, top 1.5s;
+    animation-duration: 100ms;
+    -webkit-animation: scale-in-center 1s cubic-bezier(0.250, 2, 0.450, 0.940);
+    animation: scale-in-center 1s cubic-bezier(0.250, 2, 0.450, 0.940);
+}
+
+.splash-message {
+    user-select: none;
+    position: absolute;
+    top: 289px;
+    left: 0px;
+    width: 400px;
+    text-align: center;
+    letter-spacing: 0px;
+    transition: opacity .6s, top 1.5s;
+    animation-duration: 300ms;
+    opacity: 0;
+}
+
+.message {
+    user-select: none;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 340px;
+    margin-left: 15px;
+    opacity: 0;
+    transition: opacity .9s, top 1.5s;
+    animation-duration: 600ms;
+}
+
+progress {
+    position: absolute;
+    top: 410px;
+    left: 106px;
+    width: 189px;
+    height: 10px;
+    appearance: none;
+    transition: opacity .2s;
+    animation-duration: 700ms;
+    opacity: 0;
+}
+
+.splash-message.opacity {
+    opacity: 1;
+}
+
+.message.opacity {
+    opacity: 0.5;
+}
+
+progress.show {
+    opacity: 1;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+}
+
+.splash.opacity {
+    opacity: 1;
+}
+
+.splash.translate {
+    top: 129px;
+}
+
+
+
+
+
+@-webkit-keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
