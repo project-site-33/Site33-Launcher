@@ -119,16 +119,13 @@
      if (activeAccount) activeAccount.classList.toggle('active-account');
      account.classList.add('active-account');
      headplayer(pseudo);
+     player(pseudo);
  }
  
  async function headplayer(pseudo) {
-     const bd = await new database().init();
-     let uuid = (await bd.get('1234', 'accounts-selected')).value;
-     let account = (await bd.get(uuid.selected, 'accounts')).value;
-     const player = $('.player-head')
-     const player_name = document.querySelector(".player-name")
-     for(let i=0; i<player.length; i++){
-        player[i].style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
-     }
-     //player_name.textContent = account.name;
+    document.querySelector('.player-head').style.backgroundImage = `url(https://minotar.net/helm/${pseudo}/100)`;
+ }
+ async function player(pseudo) {
+    document.querySelector('.player-name').innerText = pseudo;
+
  }

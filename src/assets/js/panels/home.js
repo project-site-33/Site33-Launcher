@@ -68,7 +68,7 @@ class Home {
                                 <p class="news-author">Auteur,<span> ${News.author}</span></p>
                             </div>
                         </div>`
-                    news.appendChild(blockNews);
+                    // news.appendChild(blockNews);
                 }
             }
         } else {
@@ -91,7 +91,6 @@ class Home {
 
     async initLaunch() {
         document.querySelector('.play-btn').addEventListener('click', async() => {
-            setActivity('start_jeu')
             let urlpkg = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url;
             let uuid = (await this.database.get('1234', 'accounts-selected')).value;
             let account = (await this.database.get(uuid.selected, 'accounts')).value;
@@ -114,6 +113,7 @@ class Home {
                     height: Resolution.screen.height
                 }
             }
+
             let opts = {
                 url: this.config.game_url === "" || this.config.game_url === undefined ? `${urlpkg}/files` : this.config.game_url,
                 authenticator: account,
@@ -154,12 +154,12 @@ class Home {
                 document.querySelector(".text-download").innerHTML = `Vérification ${((DL / totDL) * 100).toFixed(0)}%`
                 progressBar.value = DL;
                 progressBar.max = totDL;
+
             })
 
             launch.on('data', (e) => {
                 new logger('Minecraft', '#36b030');
                 if(launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
-                setActivity('jeu');
                 progressBar.style.display = "none"
                 info.innerHTML = `Demarrage en cours...`
                 console.log(e);
@@ -171,9 +171,7 @@ class Home {
                 info.style.display = "none"
                 playBtn.style.display = "block"
                 info.innerHTML = `Vérification`
-                setActivity('home');
                 new logger('Launcher', '#7289da');
-
                 console.log('Close');
             })
         })

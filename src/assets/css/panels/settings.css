@@ -4,9 +4,10 @@
     width: 100%;
     height: 70px;
     gap: 150px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +22,6 @@
     cursor: pointer;
     background: transparent;
     color: white;
-    border-radius: 10px;
     outline: none;
     padding: 8px;
 }
@@ -116,9 +116,9 @@
 
 .account {
     display: inline-block;
-    background-color: #7e4dbf;
-    box-shadow: 0 0 5px #8217ce;
-    border: 4px solid #8217ce;
+    background-color: #ac5f08;
+    box-shadow: 0 0 5px #ac5f08;
+    border: 4px solid #ac5f08;
     font: normal normal bold 30px/40px Poppins;
     width: 500px;
     height: 100px;
@@ -128,10 +128,10 @@
 }
 
 .account:hover {
-    background-color: #7e4dbf;
+    background-color: #ac5f08;
     cursor: pointer;
-    box-shadow: 0 0 5px #9d32e9;
-    border: 4px solid #9d32e9;
+    box-shadow: 0 0 5px #e4751b;
+    border: 4px solid #e4751b;
 }
 
 .account-image {
@@ -183,16 +183,16 @@
 }
 
 .active-account {
-    background: #7e4dbf;
-    border: 4px solid #7e4dbf;
-    box-shadow: 0 0 5px #7e4dbf;
+    background: #ac5f08;
+    border: 4px solid #ac5f08;
+    box-shadow: 0 0 5px #ac5f08;
 }
 
 .active-account:hover {
-    background: #7e4dbf;
+    background: #ac5f08;
     cursor: default;
-    border: 4px solid #7e4dbf;
-    box-shadow: 0 0 5px #7e4dbf;
+    border: 4px solid #ac5f08;
+    box-shadow: 0 0 5px #ac5f08;
 }
 
 
@@ -234,7 +234,7 @@
     width: 10px;
     height: 10px;
     background: #F1F1F1;
-    border: 4px solid #9d32e9;
+    border: 4px solid #e4751b;
     transition: background-color .2s, border .2s;
     border-radius: 18px;
     cursor: pointer;
@@ -243,7 +243,7 @@
 .slider-touch-left span:after,
 .slider-touch-right span:after {
     content: attr(value);
-    color: #9d32e9;
+    color: #e4751b;
     font: normal normal bold 12px/18px Poppins;
     white-space: nowrap;
     pointer-events: none;
@@ -271,7 +271,7 @@
     display: block;
     height: 100%;
     width: 0%;
-    background: #9d32e9;
+    background: #e4751b;
     transition: background-color .2s;
 }
 
@@ -352,7 +352,7 @@
 
 .select {
     border-radius: 40px;
-    background-color: #9d32e9;
+    background-color: #e4751b;
     font: normal normal normal 12px/18px Poppins;
     transition: color .2s, box-shadow .2s;
     border: none;
@@ -393,7 +393,7 @@
 }
 
 .checkbox-settings:checked+label {
-    background-color: #9d32e9;
+    background-color: #e4751b;
 }
 
 .checkround {

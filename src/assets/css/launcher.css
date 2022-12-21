@@ -1,59 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-
 @import "font.css";
 @import "panels/login.css";
 @import "panels/home.css";
-@import "panels/radio.css";
 @import "panels/settings.css";
 
 * {
-    margin: 0;
-    padding: 0;
     outline: none;
-    overflow: hidden;
 }
 
 body {
     background: url("../images/home-launcher/background.png");
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: 110%;
     min-height: 620px;
     background-repeat: no-repeat;
     font-family: 'Kanit', sans-serif;
 }
-
 img {
-    user-select: none;
     -webkit-user-drag: none;
+    user-select: none;
+}
+
+.dragbar {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 26px;
+    -webkit-app-region: drag;
+    z-index: 11;
+    display: none;
+}
+
+.frame {
+    background: transparent;
+    position: fixed;
+    display: table;
+    top: 0px;
+    right: 0px;
+    z-index: 11;
+    -webkit-app-region: no-drag;
+    display: none;
 }
 
 .hide {
     display: block;
 }
 
-.dragbar {
-    display: flex;
-    justify-content: right;
-    background-color: #000000;
-    width: 100%;
-    height: 25px;
-    z-index: 999999;
-    -webkit-app-region: drag;
-}
-
-.dragbar .frame {
-    background-color: transparent;
-    z-index: 999999;
-    -webkit-app-region: no-drag;
-}
-
-.dragbar .frame .button-frame {
-    display: inline-block;
-    cursor: pointer;
+.button-frame {
     position: relative;
+    display: table-cell;
     width: 30px;
     height: 26px;
     transition: color .2s, background-color .2s;
+    color: black;
+    cursor: pointer;
 }
 
 .icon-close:hover {
@@ -79,63 +81,67 @@ img {
     color: #f8f9f9;
 }
 
-
-
-
-
 .preload-content {
     position: absolute;
-    top: 50%;
-    left: 53%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.preload-content .preload-progress {
+.preload-progress {
     position: absolute;
-    bottom: 23px;
-    left: 166px;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 127px;
 }
 
-.preload-content .preload-progress .dot {
+.dot {
     position: absolute;
     width: 16px;
     height: 16px;
     margin-left: 14px;
     margin-top: 12px;
-    background-color: #d9d9d9;
+    background: #ffffff;
     border-radius: 50%;
     transform: translateX(0);
     animation: dot 2.8s infinite;
 }
 
-.preload-content .preload-progress .dots {
+.dots {
     transform: translateX(0);
     margin-top: 12px;
     margin-left: 31px;
     animation: dots 2.8s infinite;
 }
 
-.preload-content .preload-progress .dots span {
+.dots span {
+    display: block;
     float: left;
     width: 16px;
     height: 16px;
     margin-left: 16px;
-    background-color: #d9d9d9;
+    background: #ffffff;
     border-radius: 50%;
 }
 
-.preload-title {
-    font-size: 34px;
-    margin: 2em 0;
-    color: #E1E1E1;
-    text-align: center;
+@keyframes dot {
+    50% {
+        transform: translateX(96px);
+    }
 }
 
+@keyframes dots {
+    50% {
+        transform: translateX(-31px);
+    }
+}
 
-
-
+.preload-title {
+    font: normal normal bold 30px/40px Poppins;
+    color: #E1E1E1;
+    text-align: center;
+    margin: 2em 0;
+}
 
 .panel {
     position: absolute;
@@ -152,28 +158,8 @@ img {
     pointer-events: all;
 }
 
-
-
-
-
 .rotation {
     animation: rotation 5s infinite linear;
-}
-
-
-
-
-
-@keyframes dot {
-    50% {
-        transform: translateX(96px);
-    }
-}
-
-@keyframes dots {
-    50% {
-        transform: translateX(-31px);
-    }
 }
 
 @keyframes rotation {
@@ -185,3 +171,4 @@ img {
         transform: rotate(359deg);
     }
 }
+

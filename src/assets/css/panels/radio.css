@@ -63,6 +63,26 @@
     margin-top: 5px;
 }
 
+.player-head {
+    display: flex;
+    background-image: url(../../images/default/setve.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 65px;
+    height: 65px;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(1, 0.46, 0, 1.29);
+}
+
+.player-head:hover {
+    border-radius: 10px;
+    box-shadow: 0 0 15px #e4751b;
+    transform: scale(1.05);
+}
+
 .description {
     padding: 53px;
     color: white;

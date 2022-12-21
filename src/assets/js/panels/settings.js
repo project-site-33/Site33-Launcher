@@ -1,5 +1,5 @@
 /**
- * @author Site-33
+ * @author Luuxis
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
  */
 
@@ -48,7 +48,6 @@ class Settings {
                         uuid: "1234",
                         selected: uuid
                     }, 'accounts-selected')
-
                     accountSelect(uuid)
                 }
             }
@@ -90,18 +89,18 @@ class Settings {
     async initResolution() {
         let resolutionDatabase = (await this.database.get('1234', 'screen'))?.value?.screen;
         let resolution = resolutionDatabase ? resolutionDatabase : { width: "1280", height: "720" };
-
+        
         let width = document.querySelector(".width-size");
         width.value = resolution.width;
-
+        
         let height = document.querySelector(".height-size");
         height.value = resolution.height;
-
+    
         let select = document.getElementById("select");
         select.addEventListener("change", (event) => {
             let resolution = select.options[select.options.selectedIndex].value.split(" x ");
             select.options.selectedIndex = 0;
-
+            
             width.value = resolution[0];
             height.value = resolution[1];
             this.database.update({ uuid: "1234", screen: { width: resolution[0], height: resolution[1] } }, 'screen');
@@ -134,8 +133,7 @@ class Settings {
                 openLauncher.checked = false;
                 closeAll.checked = false;
             }
-
-            if(!closeLauncher.checked) closeLauncher.checked = true;
+           if(!closeLauncher.checked) closeLauncher.checked = true;
             settingsLauncher.launcher.close = 'close-launcher';
             this.database.update(settingsLauncher, 'launcher');
         })
@@ -145,7 +143,6 @@ class Settings {
                 closeLauncher.checked = false;
                 openLauncher.checked = false;
             }
-
             if(!closeAll.checked) closeAll.checked = true;
             settingsLauncher.launcher.close = 'close-all';
             this.database.update(settingsLauncher, 'launcher');
@@ -156,7 +153,6 @@ class Settings {
                 closeLauncher.checked = false;
                 closeAll.checked = false;
             }
-            
             if(!openLauncher.checked) openLauncher.checked = true;
             settingsLauncher.launcher.close = 'open-launcher';
             this.database.update(settingsLauncher, 'launcher');
@@ -170,12 +166,10 @@ class Settings {
         for (let i = 0; i < TabBtn.length; i++) {
             TabBtn[i].addEventListener('click', () => {
                 if (TabBtn[i].classList.contains('save-tabs-btn')) return
-                
                 for (let j = 0; j < TabBtn.length; j++) {
                     TabContent[j].classList.remove('active-tab-content');
                     TabBtn[j].classList.remove('active-tab-btn');
                 }
-                
                 TabContent[i].classList.add('active-tab-content');
                 TabBtn[i].classList.add('active-tab-btn');
             });
